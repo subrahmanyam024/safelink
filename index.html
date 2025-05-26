@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+   <html lang="en">
+   <head>
+       <meta charset="UTF-8">
+       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+       <title>SafeLink - URL Security Checker</title>
+       <link rel="stylesheet" href="style.css">
+       
+   </head>
+   <body>
+       <div class="container">
+           <div class="header">
+               <h1 class="logo">🛡️ SafeLink</h1>
+               <p class="subtitle">Advanced URL Security Analysis</p>
+           </div>
+
+           <div class="main-content">
+               <div class="input-section">
+                   <div class="input-group">
+                        <div class="mode-toggle">
+                            <label><input type="radio" name="mode" value="single" checked> Single URL</label>
+                            <label><input type="radio" name="mode" value="bulk"> Bulk URLs</label>
+                        </div>
+                        <input type="text" id="urlInput" class="url-input" placeholder="Enter URL to check (e.g., https://example.com)">
+                        <textarea id="bulkUrlInput" class="url-input" placeholder="Enter URLs, one per line (e.g., https://example.com)" style="display: none;"></textarea>
+                        <button id="checkBtn" class="check-btn">
+                            <span class="btn-text">Analyze URL(s)</span>
+                            <span class="btn-icon">🔍</span>
+                        </button>
+                    </div>
+               </div>
+
+               <div id="loading" class="loading">
+                   <div class="spinner"></div>
+                   <p>Performing security analysis...</p>
+                    <div class="progress-steps">
+                        <span class="step">Redirect Check</span>
+                        <span class="step">URL Structure</span>
+                        <span class="step">API Security Check</span>
+                        <span class="step">SSL Analysis</span>
+                        <span class="step">Final Report</span>
+                    </div>
+               </div>
+
+               <div id="result" class="result-section">
+                    <div id="bulkResults" class="bulk-results"></div>
+                    <div class="single-result">
+                        <div class="result-header">
+                            <span id="resultIcon" class="result-icon"></span>
+                            <div class="result-info">
+                                <h2 id="resultTitle"></h2>
+                                <p id="resultDescription"></p>
+                            </div>
+                        </div>
+                        <div class="security-score">
+                            <div class="score-circle">
+                                <span id="scoreNumber" class="score-number">0</span>
+                                <span class="score-label">Security Score</span>
+                            </div>
+                        </div>
+                        <div id="resultDetails" class="result-details"></div>
+                    </div>
+                </div>
+            </div>
+
+           <div class="features-section">
+               <h3>What We Check</h3>
+               <div class="features-grid">
+                   <div class="feature">
+                       <span class="feature-icon">🦠</span>
+                       <h4>Malware Detection</h4>
+                       <p>Scans for viruses and malicious content</p>
+                   </div>
+                   <div class="feature">
+                       <span class="feature-icon">🎣</span>
+                       <h4>Phishing Protection</h4>
+                       <p>Identifies fake login and scam sites</p>
+                   </div>
+                   <div class="feature">
+                       <span class="feature-icon">🔒</span>
+                       <h4>SSL Certificate</h4>
+                       <p>Validates encryption and security</p>
+                   </div>
+                   <div class="feature">
+                       <span class="feature-icon">🌐</span>
+                       <h4>Domain Reputation</h4>
+                       <p>Checks domain history and trust score</p>
+                   </div>
+               </div>
+           </div>
+       </div>
+       <script src="config.js"></script>
+       <script src="api-handler.js"></script>
+       <script src="script.js"></script>
+   </body>
+   </html>
